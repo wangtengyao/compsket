@@ -4,9 +4,9 @@ import pandas as pd
 from sklearn import linear_model
 
 """
-Compute the noise variance in a sparse linear regression model with response z and covariates W
+Compute the noise standard deviation in a sparse linear regression model with response z and covariates W
 """
-def dickerNoiseVar(W, z):
+def dickerNoiseSD(W, z):
     m, p = W.shape
     W_Gram = np.matmul(W.T, W) / m
     m1hat = np.sum(np.diagonal(W_Gram)) / p
@@ -19,7 +19,7 @@ Testing for equality of high-dimensional regression coefficients via complementa
 Model: y1 = X1 beta1 + eps1; y2 = X2 beta2 + eps2
 Test: H0: beta1 = beta2; H1: beta1 - beta2 is sparse (if sparse=True) or beta1 != beta2 (if sparse=False)
 If noise variance is known, supply it in the sigma parameter, otherwise, noise variance will be computed
-via dickerNoiseVar()
+via dickerNoiseSD()
 """
 def complementarySketching(X1, X2, y1, y2, sparse=True, sigma=None):
     # stack covariates and responses into X and y and get shape parameters
@@ -41,7 +41,7 @@ def complementarySketching(X1, X2, y1, y2, sparse=True, sigma=None):
     
     # compute sigma, the noise variance, using W and z if necessary
     if sigma is None:
-        sigma = dickerNoiseVar(W, z)
+        sigma = dickerNoiseSD(W, z)
 
     if sigma <= 0:
         return (np.nan, np.nan)
@@ -115,7 +115,7 @@ def differentialNetworkAnalysis(X1, X2, num_partners=0, nodes=None, sparse=True,
         z = np.matmul(A1, X1[:, j]) + np.matmul(A2, X2[:, j])
         
         # compute sigma, the noise variance, using W and z
-        sigma = dickerNoiseVar(W, z)
+        sigma = dickerNoiseSD(W, z)
         if sigma <= 0:
             df.iloc[i, :] = [0, 0, '']
             continue
@@ -213,7 +213,7 @@ def differentialNetworkAnalysisIntercept(X1, X2, num_partners=0, nodes=None, spa
         z = np.matmul(A1, X1[:, j]) + np.matmul(A2, X2[:, j])
         
         # compute sigma, the noise variance, using W and z
-        sigma = dickerNoiseVar(W, z)
+        sigma = dickerNoiseSD(W, z)
         if sigma <= 0:
             df.iloc[i, :] = [0, 0, '']
             continue
