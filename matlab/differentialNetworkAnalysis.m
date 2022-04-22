@@ -81,7 +81,7 @@ for i = 1:no_nodes
 
 
     % compute sigma, the noise variance, using W and z
-    sigma = dickerNoiseVar(W,z);
+    sigma = dickerNoiseSD(W,z);
     if ~isreal(sigma)
         % df(i,:) = {j, 0, 0, {[]}}; 
         test_stat(i) = 0;

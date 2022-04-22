@@ -1,4 +1,4 @@
-function [sigma] = dickerNoiseVar(W,z)
+function [sigma] = dickerNoiseSD(W,z)
 %DICKERNOISEVAR To estimate the noise variance in a standard
 %regression model.
 %   W -- regression design   z -- response

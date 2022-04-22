@@ -2,15 +2,18 @@
 
 % the data is stored in 'CD4_goodTREG_in_thymus.mat' and 'CTL4A.mat'
 
-% n1 = 400;
-% n2 = 420;
-% p = 600;
-% k = 100;
-% rho = 3;
-% sigma = 1;
+n1 = 400;
+n2 = 420;
+p = 600;
+k = 100;
+rho = 2;
+sigma = 1;
 
 
-% [X1, X2, y1, y2] = simulate(n1,n2,p,k,rho,sigma);
+[X1, X2, y1, y2] = simulate(n1,n2,p,k,rho,sigma);
+tic;
+[stat, result] = complementarySketching(X1,X2,y1,y2,1,true);
+toc;
 
 
 
@@ -31,16 +34,20 @@ tic;
 j = find(strcmp(gene_names, 'CTLA4'));
 X1mj = X1(:, [1:j-1 j+1:end]); X2mj = X2(:, [1:j-1 j+1:end]); %
 X1j = X1(:,j); X2j = X2(:,j);
-[test_stat, test_result] = complementarySketching(X1mj, X2mj, X1j, X2j,nan,true);
+toc;
+tic;
+complementarySketching(X1mj, X2mj, X1j, X2j,nan,true)
 toc;
 
 
 
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%% comprehensive analysis to the whole dataset (or its
+%%%%%%%%%%%%%%%%%%%%%%% subset)
 tic;
 nodes = [0, 133, 180] + 1;
+% nodes = 2822;
 % nodes = [133] +1;
 % nodes = 100:200;
 % nodes = 1: size(X2,2);
