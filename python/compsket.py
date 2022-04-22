@@ -18,7 +18,9 @@ def dickerNoiseSD(W, z):
 Testing for equality of high-dimensional regression coefficients via complementary sketching
 Model: y1 = X1 beta1 + eps1; y2 = X2 beta2 + eps2
 Test: H0: beta1 = beta2; H1: beta1 - beta2 is sparse (if sparse=True) or beta1 != beta2 (if sparse=False)
-Set the flag sparse to be true if the number of nonzero entries in the difference of two regression coefficients is smaller than square root of p, with p as the dimension of coefficients.
+Set the flag sparse to be true if the number of nonzero entries in the
+difference of two regression coefficients is smaller than square root of p,
+with p as the dimension of coefficients.
 If noise variance is known, supply it in the sigma parameter, otherwise, noise variance will be computed
 via dickerNoiseSD()
 """
