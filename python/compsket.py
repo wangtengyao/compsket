@@ -51,7 +51,9 @@ def complementarySketching(X1, X2, y1, y2, sparse=True, sigma=None):
     Wtilde = W / np.sqrt(np.sum(W ** 2, axis=0))
     
     # compute test statistics based on sparsity knowledge
-    # sparse is true if the number of nonzero entries in the difference of two regression coefficients is smaller than square root of p, with p as the dimension of coefficients
+    # sparse is true if the number of nonzero entries in 
+    # the difference of two regression coefficients is smaller 
+    # than square root of p, with p as the dimension of coefficients
     if sparse:
         lam = np.sqrt(4 * np.log(p))
         tau = 3 * np.log(p)
