@@ -11,7 +11,7 @@ from compsket import *
 read in data
 """
 print('read in data...')
-dat = pd.read_csv('CD4_TREG_in_thymus.csv.gz', index_col=0)
+dat = pd.read_csv('../data/CD4_TREG_in_thymus.csv.gz', index_col=0)
 X = np.array(dat.iloc[:,1:])
 gene_names = np.array(dat.columns[1:])
 CD4_filter = dat['anno_lvl_2_final_clean'] == 'CD4+T'
