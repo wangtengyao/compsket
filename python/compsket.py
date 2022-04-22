@@ -18,6 +18,7 @@ def dickerNoiseSD(W, z):
 Testing for equality of high-dimensional regression coefficients via complementary sketching
 Model: y1 = X1 beta1 + eps1; y2 = X2 beta2 + eps2
 Test: H0: beta1 = beta2; H1: beta1 - beta2 is sparse (if sparse=True) or beta1 != beta2 (if sparse=False)
+Set the flag sparse to be true if the number of nonzero entries in the difference of two regression coefficients is smaller than square root of p, with p as the dimension of coefficients.
 If noise variance is known, supply it in the sigma parameter, otherwise, noise variance will be computed
 via dickerNoiseSD()
 """
@@ -51,9 +52,6 @@ def complementarySketching(X1, X2, y1, y2, sparse=True, sigma=None):
     Wtilde = W / np.sqrt(np.sum(W ** 2, axis=0))
     
     # compute test statistics based on sparsity knowledge
-    # sparse is true if the number of nonzero entries in 
-    # the difference of two regression coefficients is smaller 
-    # than square root of p, with p as the dimension of coefficients
     if sparse:
         lam = np.sqrt(4 * np.log(p))
         tau = 3 * np.log(p)
@@ -225,7 +223,7 @@ def differentialNetworkAnalysisIntercept(X1, X2, num_partners=0, nodes=None, spa
         W = W / sigma; z = z / sigma
         Wtilde = W / np.sqrt(np.sum(W ** 2, axis=0))
         
-        # compute test statistics based on sparsity knoweldge
+        # compute test statistics based on sparsity knowledge
         if sparse:
             lam = np.sqrt(4 * np.log(p-1))
             tau = 3 * np.log(p-1)
