@@ -9,7 +9,7 @@ In the `./python/` folder
 * `example.ipynb`: IPython Notebook for the real data example
 ## R package
 In `./R/` and `./man/` folders. Can be installed via `devtools::install_github('wangtengyao/compsket')` in `R`.
-## MATLAB code 
+## MATLAB code with a possible parallel implementation
 In the `./matlab/` folder
 * `complementarySketching.m`: function for the main testing algorithm
 * `differentialNetworkAnalysis.m`: specialised function for the nodewise regression testing on the gene interaction network example
