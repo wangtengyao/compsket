@@ -11,8 +11,8 @@ In the `./python/` folder
 In `./R/` and `./man/` folders. Can be installed via `devtools::install_github('wangtengyao/compsket')` in `R`.
 ## MATLAB code 
 In the `./matlab` folder
-* `complementarySketching.m`: function for the main algorithm
-* `differentialNetworkAnalysis.m`: function for the nodewise regression testing on the gene interaction network example
+* `complementarySketching.m`: function for the main testing algorithm
+* `differentialNetworkAnalysis.m`: specialised function for the nodewise regression testing on the gene interaction network example
 * `main.m`: the script file processing the attached dataset
 * `CD4_goodTREG_in_thymus.mat`: preprocessed data for Matlab for the real dataset as in Section 5 of Gao and Wang (2020)
 ## Data
