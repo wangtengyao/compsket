@@ -9,9 +9,9 @@ In the `./python/` folder
 * `example.ipynb`: IPython Notebook for the real data example
 ## R package
 In `./R/` and `./man/` folders. Can be installed via `devtools::install_github('wangtengyao/compsket')` in `R`.
-## matlab code 
+## MATLAB code 
 
-## data
+## Data
 * `CD4_TREG_in_thymus.csv`: preprocessed data for the real data example in Section 5 of Gao and Wang (2020). 
 
 # Reference
