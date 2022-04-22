@@ -14,7 +14,7 @@ In the `./matlab/` folder
 * `complementarySketching.m`: function for the main testing algorithm
 * `differentialNetworkAnalysis.m`: specialised function for the nodewise regression testing on the gene interaction network example
 * `main.m`: the script file processing the attached dataset
-* `CD4_goodTREG_in_thymus.mat`: preprocessed data for Matlab for the real dataset as in Section 5 of Gao and Wang (2020)
+* `CD4_goodTREG_in_thymus.mat`: the preprocessed data for Matlab as in `./data/` 
 ## Data
 * `CD4_TREG_in_thymus.csv`: preprocessed data for the real data example in Section 5 of Gao and Wang (2020). 
 
