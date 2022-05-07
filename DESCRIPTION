@@ -8,6 +8,6 @@ Authors@R: c(person("Fengnan", "Gao", email = "fngao@fudan.edu.cn",
             person("Tengyao", "Wang", email="t.wang59@lse.ac.uk", role=c("aut", "cre")))
 Imports: glmnet
 Description: Two-sample testing of high-dimensional linear regression coefficients
-License: GPL-3
-RoxygenNote: 7.1.1
+License: use_gpl_license(version = 3, include_future = TRUE)
+RoxygenNote: 7.1.2
 Encoding: UTF-8
