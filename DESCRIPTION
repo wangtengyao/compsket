@@ -4,7 +4,7 @@ Title: Two-sample testing of regression coefficients via complementary sketching
 Version: 1.01
 Date: 2022-05-07
 Authors@R: c(person("Fengnan", "Gao", email = "fngao@fudan.edu.cn",
-                  role = c("aut", "cre")),
+                  role = c("aut")),
             person("Tengyao", "Wang", email="t.wang59@lse.ac.uk", role=c("aut", "cre")))
 Imports: glmnet
 Description: Two-sample testing of high-dimensional linear regression coefficients
