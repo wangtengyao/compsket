@@ -1,3 +1,4 @@
+################ Implementation for Complementary Sketching ############
 library(glmnet)
 
 #' Computing the orthonormal matrix spanning the orthogonal complement of the column span of X
@@ -15,7 +16,7 @@ orthogonalProjection <- function(X){
 #' Computing the noise variance in a high-dimensional linear model
 #' @param W design matrix for high-dimensional linear model
 #' @param z response in a high-dimensional linear model
-#' @param return a nonnegative scalar of estimated noise standard deviation
+#' @return a nonnegative scalar of estimated noise standard deviation
 #' @description Assume data are generated from the model z = W beta + e, where e has independent components N(0, sigma^2), we estimate sigma^2 by fitting a cross-validated Lasso estimator of beta and then estimate sigma from the residual sum of squares. 
 #' @export
 noise_sd <- function(W, z){
@@ -28,7 +29,7 @@ noise_sd <- function(W, z){
 #' Computing the noise variance in a high-dimensional linear model
 #' @param W design matrix for high-dimensional linear model
 #' @param z response in a high-dimensional linear model
-#' @param return a nonnegative scalar of estimated noise standard deviation
+#' @return a nonnegative scalar of estimated noise standard deviation
 #' @description Assume data are generated from the model z = W beta + e, where e has independent components N(0, sigma^2), we estimate sigma^2 by using the method in Dicker (2014).
 #' @references Dicker, L. H. (2014). Variance estimation in high-dimensional linear models. Biometrika, 101(2), 269-284. 
 #' @export
